@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    
+    <a th:href="@{/novo}">Novo cliente</a>
+
+    <h1>Lista de Clientes:</h1>
+    <table width="25%" border="1px" align="center">
+        <!-- Sintaxe de automação da lista de clientes para mostrar na tela -->
+        <tr th:each="umCliente : ${Clientes}">
+            <td th:text="*{umCliente.Id}"></td>
+            <td th:text="*{umCliente.Nome}"></td>
+            <td th:text="*{umCliente.Nascimento}"></td>
+        </tr>
+    </table>
+</body>
+</html>
